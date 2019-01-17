@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<name>26-PontoInteligente</name>           <!-- Nome do Projeto -->
+	<description>Projeto de API para o sistema de &quot;Ponto Inteligente&quot;.</description>
+	
+	<groupId>com.erikcompany</groupId>         <!-- Site da empresa ou pessoa dona da aplicação. -->
+	<artifactId>ponto-inteligente</artifactId> <!-- O nome do arquivo final da aplicação após fazer o build do projeto. -->
+	<version>0.0.1-SNAPSHOT</version>          <!-- Versao do projeto. -->
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	
+	
+	<parent>  <!-- Dependencia pai Spring Boot (Eh essa dependencia que faz o Spring Boot funcionar e tals). -->
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	
+
+
+	<dependencies>
+	
+		<dependency>  <!-- Subdependencia do Spring Boot Pai com as bibliotecas do Spring. -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+
+		<dependency>  <!-- Bibliotecas adicioanis e uteis do Spring. Eh recomendavel sempre adiciona-las em qualquer projeto. -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
+		<dependency> <!-- Subdependencia do Spring Boot Pai com as bibliotecas de test do Spring. -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		
+	</dependencies>
+
+
+
+	<build>
+	
+		<plugins>
+		
+			<plugin>  <!-- Plugin do Spring Boot para quando eu for fazer o build do projeto -->	
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			
+		</plugins>
+		
+	</build>
+
+</project>
