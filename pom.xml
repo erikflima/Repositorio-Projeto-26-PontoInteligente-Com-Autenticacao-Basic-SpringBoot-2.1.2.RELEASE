@@ -53,6 +53,29 @@
 			<scope>test</scope>
 		</dependency>
 		
+
+
+
+
+		<dependency> <!-- Bibliotecas JPA-Hibernate(Spring Data)-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+  
+        <!-- Bibliotecas para conexao com o banco de dados MySQL 8.0.12. Repositorio-> https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <scope>runtime</scope>
+		</dependency>
+
+		<dependency><!-- Bibliotecas que adiciona o banco de dados H2(que eh aquele banco de dados em memoria) no projeto. E tambem coloca as bibliotecas de conexao com esse banco. -->
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
 		
 	</dependencies>
 
