@@ -1,0 +1,6 @@
+#Esse eh um arquivo que contem instrucoes para a "plataforma https://travis-ci.com" realize o build do meu projeto.
+language: java 
+jdk:
+  - oraclejdk8
+before_install: 
+  - chmod +x mvnw #Esse comando eh para a plataforma TravisCI ter autorizacao para executar alguns comandos de permissao em relacao aos diretorios do projeto, se nao tiver esse comando, o build da erro.
