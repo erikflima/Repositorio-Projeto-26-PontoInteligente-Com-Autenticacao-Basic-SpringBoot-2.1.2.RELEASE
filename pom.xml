@@ -77,6 +77,13 @@
 		
 		
 		
+		
+		
+		<dependency> <!-- Bibliotecas do versionador de banco de dados FlyWay. So de colocar essa dependencia no projeto, o Spring Boot ja realiza as configuracoes inicias sozinho. -->
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>		
+		
 	</dependencies>
 
 
