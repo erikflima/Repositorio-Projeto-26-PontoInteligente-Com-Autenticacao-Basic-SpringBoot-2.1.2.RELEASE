@@ -83,9 +83,24 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>		
-		
-	</dependencies>
 
+
+
+
+
+		<dependency> <!-- Subdependencia do Spring Boot Pai com as bibliotecas de seguranca do Spring. O encriptador Bcrypt esta aqui dentro( org.springframework.security.crypto.bcrypt ) -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+		
+		<dependency> <!-- Subdependencia do Spring Boot Pai com as bibliotecas de seguranca do Spring de teste. -->
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+		</dependency>
+
+
+	</dependencies>
 
 
 	<build>
