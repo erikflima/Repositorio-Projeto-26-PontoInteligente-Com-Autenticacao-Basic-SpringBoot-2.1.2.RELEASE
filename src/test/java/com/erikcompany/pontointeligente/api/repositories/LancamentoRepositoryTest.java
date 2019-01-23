@@ -83,7 +83,7 @@ public class LancamentoRepositoryTest {
 	@Test
 	public void testBuscarLancamentosPorFuncionarioId() {
 		
-		List<Lancamento> lancamentos = this.lancamentoRepository.pegaTodosOsLacamentosDoFuncionario( funcionarioId );
+		List<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId( funcionarioId );
 		
 		assertEquals( 2, lancamentos.size() );
 	}
@@ -99,10 +99,10 @@ public class LancamentoRepositoryTest {
 		
 		
 		//Select dos lancamentos.
-		Page<Lancamento> lancamentos = lancamentoRepository.pegaTodosOsLacamentosDoFuncionario( funcionarioId, quantidadeDeResultadosQueDesejo );
+		Page<Lancamento> lancamentos = lancamentoRepository.findByFuncionarioId( funcionarioId, quantidadeDeResultadosQueDesejo );
 		
 		
-		assertEquals(2, lancamentos.getTotalElements());
+		assertEquals(2, lancamentos.getTotalElements() );
 	}
 	
 	

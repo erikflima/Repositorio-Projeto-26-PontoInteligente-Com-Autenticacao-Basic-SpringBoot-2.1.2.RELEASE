@@ -26,13 +26,13 @@ public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 	//Metodo no qual eu defino o conteudo da query.
 	@Transactional //Anotacao que diz para o Hibernate que esse metodo eh so de leitura, isso ajuda a melhorar a performance.
     @Query("SELECT lanc FROM Lancamento lanc   WHERE lanc.funcionario.id = :funcionarioId")
-    public List<Lancamento> pegaTodosOsLacamentosDoFuncionario ( @Param("funcionarioId") Long funcionarioId );
+    public List<Lancamento> findByFuncionarioId ( @Param("funcionarioId") Long funcionarioId );
 	
 	
 	//Metodo no qual eu defino o conteudo da query.
 	@Transactional //Anotacao que diz para o Hibernate que esse metodo eh so de leitura, isso ajuda a melhorar a performance.
     @Query("SELECT lanc FROM Lancamento lanc   WHERE lanc.funcionario.id = :funcionarioId")
-	Page<Lancamento> pegaTodosOsLacamentosDoFuncionario( @Param("funcionarioId") Long funcionarioId, Pageable pageable ); //Pageable -> Faz com que o resultado da query venham com paginacao. Exemplo, quero que pegar os resultados da segunda ate a vigesima posicao...
+	Page<Lancamento> findByFuncionarioId( @Param("funcionarioId") Long funcionarioId, Pageable pageable ); //Pageable -> Faz com que o resultado da query venham com paginacao. Exemplo, quero que pegar os resultados da segunda ate a vigesima posicao...
 
 	
 	
