@@ -56,6 +56,13 @@
 
 
 
+		<dependency> <!-- Bibliotecas que tem anotacoes da parte Web do Spring. Tomcat. Exemplo "@RestController", "@ResquestMapping", "@PathVariable" etc. Ou seja, anotacoes que coloco nas classes Controllers e tal. -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+
+
 
 		<dependency> <!-- Bibliotecas JPA-Hibernate(Spring Data)-->
 			<groupId>org.springframework.boot</groupId>
@@ -78,7 +85,6 @@
 		
 		
 		
-		
 		<dependency> <!-- Bibliotecas do versionador de banco de dados FlyWay. So de colocar essa dependencia no projeto, o Spring Boot ja realiza as configuracoes inicias sozinho. -->
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
@@ -87,12 +93,12 @@
 
 
 
-
-		<dependency> <!-- Subdependencia do Spring Boot Pai com as bibliotecas de seguranca do Spring. O encriptador Bcrypt esta aqui dentro( org.springframework.security.crypto.bcrypt ) -->
+        <!-- Subdependencia do Spring Boot Pai com as bibliotecas de seguranca do Spring. O encriptador Bcrypt esta aqui dentro( org.springframework.security.crypto.bcrypt ) 
+             OBS: Lembrado que so de adicioanar essa dependencia, os endpoints do projeto vao ser bloqueados por padrao. Ai eu tenho criar uma classe de configuracao, e la descrevo e dou permissao de acesso a requisicoes.-->
+		<dependency> 
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		
 		
 		<dependency> <!-- Subdependencia do Spring Boot Pai com as bibliotecas de seguranca do Spring de teste. -->
 			<groupId>org.springframework.security</groupId>
