@@ -43,5 +43,5 @@ VALUES
 						   NULL,
 
 
--- Insert na tabela empresa							   
+-- Select na tabela empresa							   
 (SELECT `id` FROM `empresa` WHERE `cnpj` = '82198127000121') );
