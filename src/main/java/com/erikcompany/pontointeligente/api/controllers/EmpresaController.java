@@ -41,8 +41,10 @@ public class EmpresaController {
 	 * @param cnpj
 	 * @return ResponseEntity<Response<EmpresaDto>>
 	 */
-	                                    //@GetMapping -> Anotacao do Spring que defino qual verbo quero utilizar. Poderia ser "@PostMapping" or "@DeleteMapping" or "@PutMapping" or "@PatchMapping".	
-	@GetMapping(value = "/cnpj/{cnpj}") //Definindo um atributo que recebo atraves da url da requisicao.
+	//@GetMapping           -> Anotacao do Spring que defino qual verbo quero utilizar. Poderia ser "@PostMapping" or "@DeleteMapping" or "@PutMapping" or "@PatchMapping".	
+	//{cnpj}")              -> Definindo um atributo que recebo atraves da url da requisicao.
+	//@PathVariable("cnpj") -> Definindo um atributo que recebo atraves da url da requisicao.
+	@GetMapping(value = "/cnpj/{cnpj}") 
 	public ResponseEntity< ResponsePadronizado<EmpresaDto> > buscarPorCnpj( @PathVariable("cnpj") String cnpj ) {
 		
 		

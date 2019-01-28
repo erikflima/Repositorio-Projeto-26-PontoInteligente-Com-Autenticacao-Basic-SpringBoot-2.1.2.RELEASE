@@ -48,13 +48,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		
 		http.authorizeRequests()
-	                            .antMatchers("/api/cadastrar-pj").permitAll()                                 //Todas as request que forem feitas para as uri's que comecarem com "/api/cadastrar-pj", nao precisazam passar pela autenticacao.
-	                            .antMatchers("/api/cadastrar-pf").permitAll()                                 //Todas as request que forem feitas para as uri's que comecarem com "/api/cadastrar-pf", nao precisazam passar pela autenticacao.
-	                            .antMatchers("/api/empresas/cnpj/{cnpj}").permitAll()                         //Todas as request que forem feitas para as uri's que comecarem com "/api/empresas/cnpj/{cnpj}", nao precisazam passar pela autenticacao.
-	                            .antMatchers("/api/funcionarios/atualizar/{id}").permitAll()                  //Todas as request que forem feitas para as uri's que comecarem com "/api/funcionarios/atualizar/{id}", nao precisazam passar pela autenticacao.
-	                            //.antMatchers("/api/cadastrar-pj").hasRole("ADMIN")                          //Todas as request que forem feitas para a uri "/api/cadastrar-pj", precisa passar pela autenticacao. E somente usuarios com a role "ADMIN" pode acessar essa uri.
-								//.antMatchers("/api/cadastrar-pj").hasRole("MESTRE")                         //Todas as request que forem feitas para a uri "/api/cadastrar-pj"", prec/api/cadastrar-pj"/categorias/retornaNumero", precisa passar pela autenticacao. E somente usuarios com a role "MESTRE" ou "ADMIN" podem acessar essa uri.
-								.anyRequest().authenticated()                                                 //Digo que requests para qualquer outro uri, deverao ser validadas pelo Spring Security
+	                            .antMatchers("/api/cadastrar-pj").permitAll()              //Todas as request que forem feitas para as uri's que comecarem com "/api/cadastrar-pj", nao precisazam passar pela autenticacao.
+	                            .antMatchers("/api/cadastrar-pf").permitAll()                                                   
+	                            .antMatchers("/api/empresas/cnpj/{cnpj}").permitAll()                                           
+	                            .antMatchers("/api/funcionarios/atualizar/{id}").permitAll()                                    
+	                            .antMatchers("/api/lancamentos/funcionario/listarPorFuncionarioId/{funcionarioId}").permitAll() 
+	                            .antMatchers("/api/lancamentos/listarPorId/{id}").permitAll()                                   
+	                            .antMatchers("/api/lancamentos/adicionar").permitAll()                     
+	                            .antMatchers("/api/lancamentos/atualizar/{id}").permitAll()
+	                            .antMatchers("/api/lancamentos/remover/{id}").permitAll()                           
+	                            //.antMatchers("/api/cadastrar-pj").hasRole("ADMIN")                           //Todas as request que forem feitas para a uri "/api/cadastrar-pj", precisa passar pela autenticacao. E somente usuarios com a role "ADMIN" pode acessar essa uri.
+								//.antMatchers("/api/cadastrar-pj").hasRole("MESTRE")                          //Todas as request que forem feitas para a uri "/api/cadastrar-pj"", prec/api/cadastrar-pj"/categorias/retornaNumero", precisa passar pela autenticacao. E somente usuarios com a role "MESTRE" ou "ADMIN" podem acessar essa uri.
+								.anyRequest().authenticated()                                                  //Digo que requests para qualquer outro uri, deverao ser validadas pelo Spring Security
 								.and()
 								.httpBasic()                                                                  //Aqui eu digo o tipo de autenticacao que quero fazer. Nese caso eh do tipo "Basic".
 		                        .and()

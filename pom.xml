@@ -113,6 +113,15 @@
 		</dependency>		
 
 
+        <!--Biblioteca que tem utilitarios que facilitam a maniulacao de ENUM's no codigo do projeto. -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+
+
+
 	</dependencies>
 
 

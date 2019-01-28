@@ -56,14 +56,14 @@ public class EmpresaControllerTest {
 		
 		//Aqui eu vou fazer uma chamada http , como seu eu estivesse usando o postman. Com o objetivo de testar o endpoint.
 		mvc.perform( MockMvcRequestBuilders.get( BUSCAR_EMPRESA_CNPJ_URL + CNPJ )   //"perform"-> Faz o metodo http. "MockMvcRequestBuilders.get" -> Diz a chamada vai ser do tipo GET
-				                           .accept( MediaType.APPLICATION_JSON ) )  //"Diz o tipo de retorno que aceito e JSON.
-				                           .andExpect( status().isBadRequest() )    // Digo que espero um status 400 no retorno
+				                           .accept( MediaType.APPLICATION_JSON ) )  //Diz o tipo de retorno que aceito e JSON.
+				                           .andExpect( status().isBadRequest() )    //Digo que espero um status 400 no retorno
 				                           .andExpect( jsonPath("$.errors").value("Empresa não encontrada para o CNPJ " + CNPJ) ); //Coleto o campo "errors" que vem no json de resposta da requisicao, e digo que o conteudo tem que ser "Empresa não encontrada para o CNPJ " + CNPJ".
 	}
 
 	
 	
-	/* REVISAR ESSE PARTE ACOMPANHANDO O VIDEO 19. Criando o controller de empresas
+	// REVISAR ESSE PARTE ACOMPANHANDO O VIDEO 19. Criando o controller de empresas
 	@Test
 	@WithMockUser
 	public void testBuscarEmpresaCnpjValido() throws Exception {
@@ -78,12 +78,12 @@ public class EmpresaControllerTest {
 		mvc.perform(MockMvcRequestBuilders.get( BUSCAR_EMPRESA_CNPJ_URL + CNPJ )
 				   .accept( MediaType.APPLICATION_JSON ) )
 				   .andExpect( status().isOk() )
-				   .andExpect( jsonPath( "$.data.id" ).value(ID) )
-				   .andExpect( jsonPath( "$.data.razaoSocial", equalTo( RAZAO_SOCIAL ) ) )
-				   .andExpect( jsonPath( "$.data.cnpj", equalTo(CNPJ) ) )
-				   .andExpect( jsonPath( "$.errors" ).isEmpty() );
+				   .andExpect( jsonPath( "$.conteudoDoResponse.id" ).value(ID) )                         //Pego o campo "conteudoDoResponse.id" do json de resposta e vejo se ele tem o valor que espero.
+				   .andExpect( jsonPath( "$.conteudoDoResponse.razaoSocial", equalTo( RAZAO_SOCIAL ) ) ) //Pego o campo "conteudoDoResponse.razaoSocial" do json de resposta e vejo se ele tem o valor que espero.
+				   .andExpect( jsonPath( "$.conteudoDoResponse.cnpj", equalTo(CNPJ) ) )                  //Pego o campo "conteudoDoResponse.cnpj" do json de resposta e vejo se ele tem o valor que espero.
+				   .andExpect( jsonPath( "$.errors" ).isEmpty() );                                       //Pego o campo "errors" do json de resposta e vejo se ele tem o valor que espero.
 	}
-   */
+   //
 	
 	
 	private Empresa obterDadosEmpresa() {

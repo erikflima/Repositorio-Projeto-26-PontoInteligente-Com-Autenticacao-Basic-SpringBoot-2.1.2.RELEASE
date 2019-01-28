@@ -8,7 +8,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import com.erikcompany.pontointeligente.api.entities.Lancamento;
 import com.erikcompany.pontointeligente.api.repositories.LancamentoRepository;
 import com.erikcompany.pontointeligente.api.services.LancamentoService;
@@ -27,21 +26,21 @@ public class LancamentoServiceImpl implements LancamentoService {
 	
 
 	
-	public Page<Lancamento> buscarPorFuncionarioId( Long funcionarioId, PageRequest pageRequest ) {
-	
-		log.info("Buscando lançamentos para o funcionário ID {}", funcionarioId);
-		
-		return lancamentoRepository.findByFuncionarioId( funcionarioId, pageRequest );
-	}
-	
-	
-	
 	@Cacheable("lancamentoPorId")
 	public Optional<Lancamento> buscarPorId(Long id) {
 	
 		log.info("Buscando um lançamento pelo ID {}", id);
 		
 		return lancamentoRepository.findById(id);
+	}
+	
+	
+	
+	public Page<Lancamento> buscarPorFuncionarioId( Long funcionarioId, PageRequest pageRequest ) {
+	
+		log.info("Buscando lançamentos para o funcionário ID {}", funcionarioId);
+		
+		return lancamentoRepository.findByFuncionarioId( funcionarioId, pageRequest );
 	}
 	
 	
