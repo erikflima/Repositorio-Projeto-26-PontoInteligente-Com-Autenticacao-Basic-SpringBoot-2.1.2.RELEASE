@@ -24,9 +24,9 @@ import com.erikcompany.pontointeligente.api.services.FuncionarioService;
 import com.erikcompany.pontointeligente.api.utils.PasswordUtils;
 
 
-@RestController                      //Anotacao do Spring que torna essa classe um endpoint.
-@RequestMapping("/api/funcionarios") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint.
-@CrossOrigin(origins = "*")          //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
+@RestController                                                         //Anotacao do Spring que torna essa classe um endpoint.
+@RequestMapping(value="/api/funcionarios", produces="application/json") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint. Digo que recebe json e produzo json.
+@CrossOrigin(origins = "*")                                             //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
 public class FuncionarioController {
 
 	

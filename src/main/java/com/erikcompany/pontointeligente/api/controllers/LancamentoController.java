@@ -13,7 +13,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -36,9 +35,9 @@ import com.erikcompany.pontointeligente.api.services.LancamentoService;
 
 
 
-@RestController                     //Anotacao do Spring que torna essa classe um endpoint.
-@RequestMapping("/api/lancamentos") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint.
-@CrossOrigin(origins = "*")         //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
+@RestController                                                        //Anotacao do Spring que torna essa classe um endpoint.
+@RequestMapping(value="/api/lancamentos", produces="application/json") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint. Digo que recebe json e produso json.
+@CrossOrigin(origins = "*")                                            //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
 public class LancamentoController {
 
 	
@@ -346,7 +345,6 @@ public class LancamentoController {
 	//{id}                                 -> Definindo um atributo que recebo atraves da url da requisicao.
 	//@PreAuthorize("hasAnyRole('ADMIN')") -> Aqui digo "somente quem tem perfil 'ADMIN', pode acessar esse metodo". Fazendo assim que a requisicao que chegar ate aqui, passe pelos filtros que criei do Spring Security. 
 	@DeleteMapping(value = "/remover/{id}")
-	//@PreAuthorize("hasAnyRole('ADMIN')") 
 	public ResponseEntity< ResponsePadronizado<String> > remover( @PathVariable("id") Long id) {
 		
 		

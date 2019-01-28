@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.erikcompany.pontointeligente.api.dtos.EmpresaDto;
 import com.erikcompany.pontointeligente.api.entities.Empresa;
 import com.erikcompany.pontointeligente.api.response.ResponsePadronizado;
 import com.erikcompany.pontointeligente.api.services.EmpresaService;
 
 
-@RestController                  //Anotacao do Spring que torna essa classe um endpoint.
-@RequestMapping("/api/empresas") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint.
-@CrossOrigin(origins = "*")      //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
+@RestController                                                     //Anotacao do Spring que torna essa classe um endpoint.
+@RequestMapping(value="/api/empresas", produces="application/json") //Anotacao do Spring que uso para definir qual sera o caminho do endpoint. Digo que recebe json e produso json.
+@CrossOrigin(origins = "*")                                         //Anotacao do Spring que uso para dizer que esse controller pode receber requisicoes de qualquer origem, ou seja, requisicoes de qualquer dominio(url), mas eu poderia restrigir, e colocar quais domininios podem fazer requisicoes para esse controller.
 public class EmpresaController {
 
 	

@@ -62,6 +62,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	                            .antMatchers("/api/lancamentos/adicionar").hasAnyRole("NORMAL", "ADMIN")                        //Todas as request que forem feitas para a uri tal, precisa passar pela autenticacao. E somente usuarios com a role "NORMAL" ou "ADMIN" podem acessar essa uri.
 	                            .antMatchers("/api/lancamentos/atualizar/{id}").hasAnyRole("NORMAL", "ADMIN")                   //Todas as request que forem feitas para a uri tal, precisa passar pela autenticacao. E somente usuarios com a role "NORMAL" ou "ADMIN" podem acessar essa uri.
 	                            .antMatchers("/api/lancamentos/remover/{id}").hasRole("ADMIN")                                  //Todas as request que forem feitas para a uri tal, precisa passar pela autenticacao. E somente usuarios com a role "ADMIN" podem acessar essa uri.
+	                            .antMatchers("/swagger-ui.html#").permitAll()                                                   //Todas as request que forem feitas para a uri tal, precisa passar pela autenticacao. E somente usuarios com a role "ADMIN" podem acessar essa uri.
+	                            
+	                            
 	                            
 	                            .anyRequest().authenticated()                                                  //Digo que requests para qualquer outro uri, deverao ser validadas pelo Spring Security
 								.and()
