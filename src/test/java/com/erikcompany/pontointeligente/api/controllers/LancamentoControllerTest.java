@@ -65,7 +65,7 @@ public class LancamentoControllerTest {
 	
 	
 	@Test
-	//@WithMockUser
+	@WithMockUser(username = "admin", roles = {"ADMIN"}) //Aqui eu defino um perfil de usuario que vai acessar o endpoint. Nao preciso colocar senha, so defino o "user" e o a "role" que ele vai ter.
 	public void testCadastrarLancamento() throws Exception {
 		
 		
@@ -101,7 +101,7 @@ public class LancamentoControllerTest {
 	
 	
 	@Test
-	//@WithMockUser
+	@WithMockUser(username = "admin", roles = {"ADMIN"}) //Aqui eu defino um perfil de usuario que vai acessar o endpoint. Nao preciso colocar senha, so defino o "user" e o a "role" que ele vai ter.
 	public void testCadastrarLancamentoFuncionarioIdInvalido() throws Exception {
 		
 		
@@ -125,7 +125,7 @@ public class LancamentoControllerTest {
 	
 	
 	@Test
-	//@WithMockUser(username = "admin@admin.com", roles = {"ADMIN"})
+	@WithMockUser(username = "admin", roles = {"ADMIN"}) //Aqui eu defino um perfil de usuario que vai acessar o endpoint. Nao preciso colocar senha, so defino o "user" e o a "role" que ele vai ter.
 	public void testRemoverLancamento() throws Exception {
 		
 		
@@ -141,9 +141,9 @@ public class LancamentoControllerTest {
 	
 	
 	
-	/*
+	
 	@Test
-	@WithMockUser
+	@WithMockUser(username = "erik", roles = {"NORMAL"}) //Aqui eu defino um perfil de usuario que vai acessar o endpoint. Nao preciso colocar senha, so defino o "user" e o a "role" que ele vai ter.
 	public void testRemoverLancamentoAcessoNegado() throws Exception {
 		
 		
@@ -155,7 +155,7 @@ public class LancamentoControllerTest {
 				                           .accept( MediaType.APPLICATION_JSON))          //Diz o tipo de retorno que aceito e JSON.
 				                           .andExpect( status().isForbidden() );          //Digo que espero um status 403-FORBIDDEN no retorno.
 	}
-    */
+    
 	
 	
 	//Cria uma String em formato JSON.
