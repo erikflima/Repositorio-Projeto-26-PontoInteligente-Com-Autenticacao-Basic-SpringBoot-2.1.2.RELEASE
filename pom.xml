@@ -122,6 +122,7 @@
 
 
 
+
 		<dependency> <!-- Bibliotecas do Swagger. Serve para implementar a documentacao do Swagger nos endpoints do projeto. -->
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
