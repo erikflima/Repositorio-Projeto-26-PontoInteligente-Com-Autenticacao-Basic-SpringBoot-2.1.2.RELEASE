@@ -1,0 +1,16 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:noNamespaceSchemaLocation="ehcache.xsd">
+	     
+	     
+	<!-- Aqui eu defino as carasteriscas do cache:
+	      name                -> Nome do Cache.
+	      maxEntriesLocalHeap -> Numero de entradas que o cache vai ter.
+	      timeToLiveSeconds   -> Quantidade de tempo sem segundos que o cache vai permanecer na memorio da aplicacao.
+	-->     
+	<cache 
+		name="cacheDoErik" 
+		maxEntriesLocalHeap="200"
+		timeToLiveSeconds="3600">
+	</cache>
+	
+</ehcache>

@@ -26,7 +26,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 	
 
 	
-	@Cacheable("lancamentoPorId")
+	@Cacheable("cacheDoErik") //Aqui eu ativo o uso de cache nesse metodo. As configuracoes estao no arquivo ehcache.xml na pasta src/main/resources. Ai, quando esse metodo for chamado, o resultado dele vai ser armazenado na memoria do cache, e a proxima chamada que for feita, vai ser retornado o valor salvo no cache, melhorando assim a performance e rapidez da aplicacao.
 	public Optional<Lancamento> buscarPorId(Long id) {
 	
 		log.info("Buscando um lançamento pelo ID {}", id);
@@ -45,7 +45,7 @@ public class LancamentoServiceImpl implements LancamentoService {
 	
 	
 	
-	@CachePut("lancamentoPorId")
+	@CachePut("cacheDoErik") //Aqui eu ativo o uso de cache nesse metodo. As configuracoes estao no arquivo ehcache.xml na pasta src/main/resources. Ai, quando esse metodo for chamado, ele vai atualizar a informacao de cache atual que esta em memoria. Posso ver o video "25.Aumentando a performance com o EhCache" para relembrar melhor.
 	public Lancamento persistir(Lancamento lancamento) {
 		
 		log.info("Persistindo o lançamento: {}", lancamento);

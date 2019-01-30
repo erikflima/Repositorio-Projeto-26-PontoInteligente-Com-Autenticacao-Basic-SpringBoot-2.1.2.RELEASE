@@ -134,6 +134,13 @@
 			<version>2.6.1</version>
 		</dependency>
 
+
+		<dependency><!-- Bibliotecas do EhCahe. Que uso para aumentar a performance dos endpoints do projeto. -->
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 
