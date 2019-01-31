@@ -10,9 +10,9 @@
 	<name>26-PontoInteligente</name>           <!-- Nome do Projeto -->
 	<description>Projeto de API para o sistema de &quot;Ponto Inteligente&quot;.</description>
 	
-	<groupId>com.erikcompany</groupId>         <!-- Site da empresa ou pessoa dona da aplicação. -->
-	<artifactId>ponto-inteligente</artifactId> <!-- O nome do arquivo final da aplicação após fazer o build do projeto. -->
-	<version>0.0.1-SNAPSHOT</version>          <!-- Versao do projeto. -->
+	<groupId>com.erikcompany</groupId>                                <!-- Site da empresa ou pessoa dona da aplicação. -->
+	<artifactId>ponto-inteligente-com-autenticacao-basic</artifactId> <!-- O nome do arquivo final da aplicação após fazer o build do projeto. -->
+	<version>0.0.1-SNAPSHOT</version>                                 <!-- Versao do projeto. -->
 
 
 	<properties>
@@ -81,6 +81,7 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		
 		
 		
