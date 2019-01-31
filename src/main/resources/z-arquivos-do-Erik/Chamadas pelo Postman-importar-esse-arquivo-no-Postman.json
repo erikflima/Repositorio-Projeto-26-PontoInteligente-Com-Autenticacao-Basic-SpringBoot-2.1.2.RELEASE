@@ -1,0 +1,889 @@
+{
+	"info": {
+		"_postman_id": "fcd53082-6c04-4531-bd09-00de6efd63c3",
+		"name": "Chamadas - Projeto 26-PontoInteligente-Com-Autenticacao-Basic(SpringBoot 2.1.2.RELEASE)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Chama ao endpoint - /api/cadastrar-pj",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Erik Company International\",\n    \"email\": \"eriklima@company.ca\",\n    \"senha\": \"breaks\",\n    \"cpf\": \"23090175070\",\n    \"razaoSocial\": \"Erik Company\",\n    \"cnpj\": \"32952980000119\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cadastrar-pj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cadastrar-pj"
+					]
+				},
+				"description": "Chamada do endpoint que serve para cadastrar uma pessoa juridica."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "Formato Json normal."
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Erik Lima\",\n    \"email\": \"eriklima@canada.ca\",\n    \"senha\": \"breaks\",\n    \"cpf\": \"33718136813\",\n    \"razaoSocial\": \"UpperDev\",\n    \"cnpj\": \"83802142000108\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cadastrar-pj",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cadastrar-pj"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "2-Chama ao endpoint - /api/cadastrar-pf",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\": \"Erik Alves\",\n    \"email\": \"erik.alves@canada.ca\",\n    \"senha\": \"breaks\",\n    \"cpf\": \"01391550072\",\n    \"valorHora\": \"900\",\n    \"cnpj\": \"83802142000108\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cadastrar-pf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cadastrar-pf"
+					]
+				},
+				"description": "Chamada do endpoint que serve para cadastrar uma pessoa fisica."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik - api/cadastrar-pf",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "Formato Json normal."
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\": \"Erik Alves\",\n    \"email\": \"erik.alves@canada.ca\",\n    \"senha\": \"breaks\",\n    \"cpf\": \"01391550072\",\n    \"valorHora\": \"900\",\n    \"cnpj\": \"83802142000108\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cadastrar-pf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cadastrar-pf"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "3-Chama ao endpoint - /api/empresas/cnpj/{cnpj}",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/empresas/cnpj/82198127000121",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"empresas",
+						"cnpj",
+						"82198127000121"
+					]
+				},
+				"description": "Chamada do endpoint que serve para buscar uma empresa pelo CNPJ."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik - /api/empresas/cnpj/{cnpj}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/empresas/cnpj/82198127000121",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"empresas",
+								"cnpj",
+								"82198127000121"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Jan 2019 22:26:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conteudoDoResponse\": {\n        \"id\": 1,\n        \"razaoSocial\": \"UpperDev\",\n        \"cnpj\": \"82198127000121\"\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "4-Chama ao endpoint - /api/funcionarios/atualizar/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Erik Lima\",\n    \"email\": \"erik.alves@canada.ca\",\n    \"valorHora\": \"70\",\n    \"qtdHorasTrabalhoDia\": \"8.5\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/funcionarios/atualizar/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"funcionarios",
+						"atualizar",
+						"2"
+					]
+				},
+				"description": "Chamada do endpoint que serve para atualizar um funcionario no banco."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik :)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Erik Lima\",\n    \"email\": \"erik.alves@canada.ca\",\n    \"valorHora\": \"70\",\n    \"qtdHorasTrabalhoDia\": \"8.5\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/funcionarios/atualizar/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"funcionarios",
+								"atualizar",
+								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "application/json"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "5-Chama ao endpoint - /api/lancamentos/adicionar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": \"2019-01-27 19:00:00\",\n    \"tipo\": \"TERMINO_TRABALHO\",\n    \"descricao\": \"Termino de trabalho\",\n    \"localizacao\": \"1.23423,2.12312\",\n    \"funcionarioId\": \"2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/lancamentos/adicionar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lancamentos",
+						"adicionar"
+					]
+				},
+				"description": "Chamada do endpoint que serve para adicionar um lançamento de um funcionario."
+			},
+			"response": [
+				{
+					"name": "5-Chama ao endpoint - /api/lancamentos/adicionar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": \"2019-01-27 09:00:00\",\n    \"tipo\": \"INICIO_TRABALHO\",\n    \"descricao\": \"Início de trabalho\",\n    \"localizacao\": \"1.23423,2.12312\",\n    \"funcionarioId\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lancamentos/adicionar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lancamentos",
+								"adicionar"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "6-Chama ao endpoint - /api/lancamentos/atualizar/{id}",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"data\": \"2019-01-27 19:00:00\",\n    \"tipo\": \"TERMINO_TRABALHO\",\n    \"descricao\": \"Termino de trabalho\",\n    \"localizacao\": \"9.99999,2.12312\",\n    \"funcionarioId\": \"2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/lancamentos/atualizar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lancamentos",
+						"atualizar",
+						"3"
+					]
+				},
+				"description": "Chamada do endpoint que serve para atualizar um lançamento de um funcionario."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik - /api/lancamentos/atualizar/{id}",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": \"2019-01-27 19:00:00\",\n    \"tipo\": \"TERMINO_TRABALHO\",\n    \"descricao\": \"Termino de trabalho\",\n    \"localizacao\": \"9.99999,2.12312\",\n    \"funcionarioId\": \"2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lancamentos/atualizar/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lancamentos",
+								"atualizar",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Jan 2019 22:00:02 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conteudoDoResponse\": {\n        \"id\": 3,\n        \"data\": \"2019-01-27 19:00:00\",\n        \"tipo\": \"TERMINO_TRABALHO\",\n        \"descricao\": \"Termino de trabalho\",\n        \"localizacao\": \"9.99999,2.12312\",\n        \"funcionarioId\": 2\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "7-Chama ao endpoint - /api/lancamentos/listarPorId/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/lancamentos/listarPorId/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lancamentos",
+						"listarPorId",
+						"1"
+					]
+				},
+				"description": "Retorna um lançamento pelo seu ID."
+			},
+			"response": [
+				{
+					"name": "Exemplo de chamada do Erik - /api/lancamentos/listarPorId/{id}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lancamentos/listarPorId/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lancamentos",
+								"listarPorId",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Jan 2019 22:05:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conteudoDoResponse\": {\n        \"id\": 1,\n        \"data\": \"2019-01-27 09:00:00\",\n        \"tipo\": \"INICIO_TRABALHO\",\n        \"descricao\": \"Início de trabalho\",\n        \"localizacao\": \"1.23423,2.12312\",\n        \"funcionarioId\": 2\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "8-Chama ao endpoint - /api/lancamentos/funcionario/listarPorFuncionarioId/{funcionarioId}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/lancamentos/funcionario/listarPorFuncionarioId/2?posicaoInicial=0&ordenarPor=id&direcaoDaOrdenacao=DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lancamentos",
+						"funcionario",
+						"listarPorFuncionarioId",
+						"2"
+					],
+					"query": [
+						{
+							"key": "posicaoInicial",
+							"value": "0",
+							"description": "Trazar o resultado da selecao, apartir dessa posicao inicial."
+						},
+						{
+							"key": "ordenarPor",
+							"value": "id",
+							"description": "Campo no qual quero que seja feita a ordencaçao do resultado."
+						},
+						{
+							"key": "direcaoDaOrdenacao",
+							"value": "DESC",
+							"description": "Direçao no qual eu quero que seja feita a ordenacao do resultado."
+						}
+					]
+				},
+				"description": "Retorna todos os lançamento de um funcionário, pelo ID do funcionário.\nTambem posso passar os parametros opcionais. Exemplo:\n > posicaoInicial=0\n > ordenarPor=id\n > direcaoDaOrdenacao=DESC"
+			},
+			"response": [
+				{
+					"name": "Exemplo de Chamada do Erik - /api/lancamentos/funcionario/listarPorFuncionarioId/{funcionarioId}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lancamentos/funcionario/listarPorFuncionarioId/2?posicaoInicial=0&ordenarPor=id&direcaoDaOrdenacao=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lancamentos",
+								"funcionario",
+								"listarPorFuncionarioId",
+								"2"
+							],
+							"query": [
+								{
+									"key": "posicaoInicial",
+									"value": "0",
+									"description": "Trazar o resultado da selecao, apartir dessa posicao inicial."
+								},
+								{
+									"key": "ordenarPor",
+									"value": "id",
+									"description": "Campo no qual quero que seja feita a ordencaçao do resultado."
+								},
+								{
+									"key": "direcaoDaOrdenacao",
+									"value": "DESC",
+									"description": "Direçao no qual eu quero que seja feita a ordenacao do resultado."
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Jan 2019 22:22:50 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conteudoDoResponse\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"data\": \"2019-01-27 09:00:00\",\n                \"tipo\": \"INICIO_TRABALHO\",\n                \"descricao\": \"Início de trabalho\",\n                \"localizacao\": \"1.23423,2.12312\",\n                \"funcionarioId\": 2\n            },\n            {\n                \"id\": 3,\n                \"data\": \"2019-01-27 19:00:00\",\n                \"tipo\": \"TERMINO_TRABALHO\",\n                \"descricao\": \"Termino de trabalho\",\n                \"localizacao\": \"9.99999,2.12312\",\n                \"funcionarioId\": 2\n            }\n        ],\n        \"pageable\": {\n            \"sort\": {\n                \"sorted\": true,\n                \"unsorted\": false,\n                \"empty\": false\n            },\n            \"offset\": 0,\n            \"pageSize\": 25,\n            \"pageNumber\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"totalPages\": 1,\n        \"totalElements\": 2,\n        \"last\": true,\n        \"size\": 25,\n        \"number\": 0,\n        \"sort\": {\n            \"sorted\": true,\n            \"unsorted\": false,\n            \"empty\": false\n        },\n        \"numberOfElements\": 2,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"errors\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "9-Chama ao endpoint - /api/lancamentos/remover/{id}",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/lancamentos/remover/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"lancamentos",
+						"remover",
+						"1"
+					]
+				},
+				"description": "Retorna todos os lançamento de um funcionário, pelo ID do funcionário."
+			},
+			"response": [
+				{
+					"name": "Chamada de Exemplo do Erik - /api/lancamentos/remover/{id}",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/lancamentos/remover/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lancamentos",
+								"remover",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 27 Jan 2019 22:36:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"conteudoDoResponse\": null,\n    \"errors\": []\n}"
+				}
+			]
+		}
+	]
+}
